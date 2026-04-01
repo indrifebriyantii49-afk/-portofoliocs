@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a1b26;
+    position: relative;
+    overflow: hidden;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    filter: blur(80px);
+    background: radial-gradient(circle at 50% 50%, #2f2a4a 0%, #151621 100%);
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.blob-1 {
+    width: 600px;
+    height: 600px;
+    background: #e28e93;
+    top: -200px;
+    left: 20%;
+    opacity: 0.6;
+}
+
+.blob-2 {
+    width: 500px;
+    height: 500px;
+    background: #8e6ebc;
+    top: 10%;
+    right: 10%;
+    opacity: 0.5;
+}
+
+.blob-3 {
+    width: 700px;
+    height: 700px;
+    background: #194a53;
+    bottom: -200px;
+    left: -100px;
+    opacity: 0.7;
+}
+
+.blob-4 {
+    width: 600px;
+    height: 600px;
+    background: #253351;
+    bottom: -100px;
+    right: 10%;
+    opacity: 0.6;
+}
+
+.login-container {
+    width: 400px;
+    padding: 40px;
+    background: rgba(135, 131, 143, 0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.tiktok-logo {
+    width: 40px;
+    height: 40px;
+    fill: #2c303f;
+    filter: drop-shadow(2px 2px 0px #00f2fe) drop-shadow(-2px -2px 0px #fe0979);
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: 400;
+    color: #2c303f;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.separator {
+    border: none;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    margin-bottom: 30px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 14px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    background: rgba(43, 44, 53, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.input-group input:focus {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(43, 44, 53, 0.9);
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    padding-left: 25px;
+}
+
+.remember input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 15px;
+    width: 15px;
+    background-color: rgba(43, 44, 53, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.remember:hover input ~ .checkmark {
+    background-color: rgba(43, 44, 53, 0.8);
+}
+
+.remember input:checked ~ .checkmark {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.remember input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.remember .checkmark:after {
+    left: 4px;
+    top: 1px;
+    width: 4px;
+    height: 8px;
+    border: solid #1e1f29;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.forgot {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    font-style: italic;
+    transition: color 0.3s;
+}
+
+.forgot:hover {
+    color: #fff;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to right, #fe4f60, #fb6361);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 5px 15px rgba(254, 79, 96, 0.3);
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(254, 79, 96, 0.4);
+}
+
+.security-warning {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ff3333;
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.5s ease-out;
+}
+
+.security-warning i {
+    font-size: 24px;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        width: 90%;
+        padding: 30px 20px;
+    }
+    
+    .security-warning {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
